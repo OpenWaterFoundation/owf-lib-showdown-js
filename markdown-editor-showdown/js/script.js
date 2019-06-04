@@ -1,3 +1,4 @@
+
 function run() {
     var text = document.getElementById('sourceTA').value,
         target = document.getElementById('targetDiv'),
