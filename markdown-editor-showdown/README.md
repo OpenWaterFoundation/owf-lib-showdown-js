@@ -3,14 +3,14 @@ The following example is a Tutorial found on the [Showdown Documentation](https:
 
 This tutorial implements a browser markdown editor using showdown and showdown extensions. 
 
-# Recomendations Before Starting 
-Showdown's core library doesn't have any dependencies so the setup is pretty straightforward. However, Showdown's documentation encourages people to use a package manager suce as [bower](https://bower.io/) to manage project dependencies.
+# Recommendations Before Starting 
+Showdown's core library doesn't have any dependencies so the setup is pretty straightforward. However, Showdown's documentation encourages people to use a package manager such as [bower](https://bower.io/) to manage project dependencies.
 
 Install bower on npm:
 ``` 
 npm install -g bower
 ```
-Intall showdown on bower:
+Install showdown on bower:
 
 ``` 
 bower install showdown 
@@ -33,16 +33,16 @@ showdown-editor
     └──style.css
 ```
 
-```bower.json```  is initialized by running the interactive console command:
+```bower.json``` is initialized by running the interactive console command:
 ```
 bower init
 ```
 # Installing Showdown
-To install Showdown, run the following command (inside *showdown-editor* diectectory):
+To install Showdown, run the following command (inside ```showdown-editor``` directory):
 ```
 bower install showdown --save
 ```
-This installs showdown inside the bower_components directory and save showdown as a dependecy in the bower.json file.
+This installs showdown inside the ```bower_components``` directory and save showdown as a dependency in the bower.json file.
 
 # index.html
 Create a basic html5 html file:
@@ -74,7 +74,7 @@ Be sure to include showdown.js and your script.js in index.html file, just befor
 <script src="bower_components/showdown/1.0.1/showdown.min.js"></script>
 <script src="js/script.js"></script>
 ```
-(NOTE: Make sure the path to showdown.min.js is correct. In this instance the version being used is version 1.0.1, change this to the correct path name whether it is a diffrent version or dist).
+(NOTE: Make sure the path to showdown.min.js is correct. In this instance the version being used is version 1.0.1, change this to the correct path name whether it is a different version or dist).
 
 # style.css
 
@@ -90,7 +90,7 @@ Be sure to include showdown.js and your script.js in index.html file, just befor
 ```
 
 # script.js
-Add the fowllowing content to js/script.js
+Add the following content to js/script.js
 ```
 function run() {
   var text = document.getElementById('sourceTA').value,
@@ -102,5 +102,5 @@ function run() {
 }
 ```
 
-The ```script.js``` file is pretty straightforward. When the ```runBtn``` is clicked, it gets the text of the textarea, passes it through showdown that converts the markdwon into html. The output is then put insed the div ```targetDiv```, ultimately replacing the previous content. 
+The ```script.js``` file is pretty straightforward. When the ```runBtn``` is clicked, it gets the text of the textarea, passes it through showdown that converts the markdown into html. The output is then put inside the div ```targetDiv```, ultimately replacing the previous content. 
 
