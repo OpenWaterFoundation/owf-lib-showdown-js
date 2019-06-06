@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>South Platte Basin Annual Natural Flows</title>
+    <!-- Javascript -->
+  <script src="js/highcharts-5.0.12.js"></script>
+  <script src="js/heatmap-5.0.12.js"></script>
+  <script src="js/exporting-5.0.12.js"></script>
+  <script src="js/data-5.0.14.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="container" style="width:100%; height:850px;"></div>
+<script>
+  $.get("data/natural-flows-annual-duration-selectlocations.csv",function(csv) {
+
+    var lines = csv.split('\n');
+    var dates = new Array();
+    var series = {
+      turboThreshold: 0,
+      data: [],
+      // rowsize: 24 * 36e5
+    };
+
+    $.each(lines, function(lineNo,line){
+      if(lineNo > 0)
+      {
+        var items = line.split(',');
+        if(!dates.includes(items[0]))
+        {
+          dates.push(items[0]);
+        }
+      }
+    });
+
+    $.each(lines, function(lineNo,line){
+      if(lineNo > 0)
+      {
+        var items = line.split(',');
+        series.data.push([parseFloat(items[1]),parseFloat(getIndex(items[0])),parseFloat(items[2])]);
+      }
+    });
+
+
+    function getIndex(date)
+    {
+      for(var index = 0; index < dates.length; index++)
+      {
+        if(date == dates[index])
+        {
+          return index;
+        }
+      }
+    }
+
+  Highcharts.chart('container', {
+	
+    chart: {
+      type: 'heatmap',
+	  spacingBottom: 25
+    },
+
+    title: {
+      text: 'South Platte Basin Annual Natural Flows - Percentiles'
+    },
+	
+    subtitle: {
+      text: 'Source:  StateMod'
+    },	
+
+    yAxis: {
+      categories: dates,
+	  reversed: true,
+      title: {
+        text: 'Calendar Year'
+      }
+    },
+
+    xAxis: {
+      categories: ["S. PLATTE RIVER BELOW ANTERO RESERVOIR", "S. PLATTE RIV AB 11-MILE CANYON RES NR HARTSEL", "S. PLATTE RIVER NR LAKE GEORGE", "ROCK CRK ABV CONFLUENCE WITH TARRYALL CRK",
+				   "S. PLATTE RIVER BELOW CHEESMAN RESERVOIR", "NORTH FORK S. PLATTE RIVER AT GRANT", "NORTH FORK S. PLATTE RIVER AT BAILEY", "S. PLATTE RIVER AT SOUTH PLATTE", 
+				   "S. PLATTE RIVER AT WATERTON", "PLUM CRK AT TITAN ROAD NEAR LOUVIERS", "BEAR CRK AT SHERIDAN", "S. PLATTE RIVER AT ENGLEWOOD", "CHERRY CRK AT DENVER", 
+				   "S. PLATTE RIVER AT DENVER", "CLEAR CRK AT DERBY", "COAL CRK NEAR PLAINVIEW", "BIG DRY CRK AT WESTMINSTER", "S. PLATTE RIVER AT HENDERSON", "S. PLATTE RIVER AT FORT LUPTON", 
+				   "S. BOULDER CRK NEAR ELDORADO SPRINGS", "MIDDLE BOULDER CRK AT NEDERLAND", "FOURMILE CRK AT ORODELL", "LEFT HAND CRK NEAR BOULDER", "BOULDER CRK AT MOUTH NEAR LONGMONT",
+				   "ST. VRAIN CRK AT MOUTH, NEAR PLATTEVILLE", "L. THOMPSON RIVER NEAR BERTHOUD", "FISH CRK NEAR ESTES PARK", "BIG THOMPSON RIVER AT MOUTH, NEAR LA SALLE", 
+				   "S. PLATTE RIVER NEAR KERSEY", "S. PLATTE RIVER NEAR WELDONA", "S. PLATTE RIVER AT COOPER BRIDGE, NEAR BALZAC", "S. PLATTE RIVER AT JULESBURG"],
+      reversed: false,
+	  opposite: true,
+	  labels:
+		{rotation: -90
+		},
+      minPadding: 0,
+      maxPadding: 0,
+     },
+
+     colorAxis: {
+          dataClasses: [{
+            to: (9.99), color:"#b30000", name:"Much Below Normal"
+        }, {  
+				from: (10.00),
+				to: (24.99), color:"#fe9929", name:"Below Normal"
+                }, {
+				from: (25.00),
+				to: (75.99), color:"green", name:"Normal"
+				},{
+				from: (76.00),
+				to: (90.99), color:"#6baed6", name:"Above Normal"
+				},{
+				from: (91.0),
+				to: (100), color:"#08519c", name:"Much Above Normal"
+				}],
+          labels: {
+              format: '{value} %'
+          }
+      },
+
+      legend: {
+          align: 'center',
+          layout: 'horizontal',
+          margin: 0,
+          verticalAlign: 'bottom',
+          y: 25,
+          symbolHeight: 10,
+          symbolRadius: 0
+      },
+
+      tooltip: {  // control what the tooltip will display when a user hovers over a point on the heatmap
+        formatter: function()  {
+          return '<b>' + this.series.xAxis.categories[this.point.x] + '</b>' + '<br>' + 'was in the ' + '<b>' + this.point.value 
+		  + '</b>' + ' percentile' + '<br>' + 'in ' + '<b>' + this.series.yAxis.categories[this.point.y] + '</b>';           
+        }
+      },
+
+      series: [series]
+  });
+});
+</script>
+
+</body>
+</html>
+
