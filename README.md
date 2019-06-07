@@ -6,7 +6,7 @@ Open Water Foundation library based on showdown JavaScript library
 | Preview Link | Description |
 |---------|-------------------------------------------------------------------------|
 |**[Markdown-to-HTML-Simple-Editor](Markdown-to-HTML-Simple-Editor)**| This tutorial creates a simple  interactive browser Markdown editor using Showdown. This editor takes Markdown source code from the HTML file specifically, puts the Markdown souce code in the editor, and converts to HTML.             |
-|**[Markdown-to-HTML-Fullpage-Story](Markdown-to-HTML-Simple-Editor)**|  This demonstration integrates Showdown with fullpage stories. Separate Markdown files with content are used as the input files to convert to HTML. This significantly cuts back on the previously existing HTML source code.           | 
+|**[Markdown-to-HTML-Fullpage-Story](Markdown-to-HTML-Fullpage-Story)**|  This demonstration integrates Showdown with fullpage stories. Separate Markdown files with content are used as the input files to convert to HTML. This significantly cuts back on the previously existing HTML source code.           | 
 
 # Getting Started
 
