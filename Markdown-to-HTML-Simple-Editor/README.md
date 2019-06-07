@@ -1,7 +1,17 @@
 # Simple Markdown to HTML Editor
+[See a Live Demo of This Example](http://github.openwaterfoundation.org/owf-lib-showdown-js/markdown-editor-showdown/site/)
+
 The following example is a Tutorial found on the [Showdown Documentation](https://github.com/showdownjs/showdown/wiki/Tutorial:-Markdown-editor-using-Showdown).
 
 This tutorial implements a browser markdown editor using showdown and showdown extensions. 
+
+# Table of Contents
+- [Recommendations Before Starting](#recommendations-before-starting)
+- [Getting Strated](#getting-strarted)
+- [Installing Showdown](#installng-showdown)
+- [index.html](#index-html)
+- [style.css](#style.css)
+- [script.js](#script.js)
 
 # Recommendations Before Starting 
 Showdown's core library doesn't have any dependencies so the setup is pretty straightforward. However, Showdown's documentation encourages people to use a package manager such as [bower](https://bower.io/) to manage project dependencies.
