@@ -1,5 +1,5 @@
 # Simple Markdown to HTML Editor
-[See a Live Demo of This Example](http://github.openwaterfoundation.org/owf-lib-showdown-js/markdown-editor-showdown/site/)
+[See a Live Demo of This Example](http://github.openwaterfoundation.org/owf-lib-showdown-js/Markdown-to-HTML-Simple-Editor/site/)
 
 The following example is a Tutorial found on the [Showdown Documentation](https://github.com/showdownjs/showdown/wiki/Tutorial:-Markdown-editor-using-Showdown).
 

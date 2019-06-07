@@ -1,5 +1,5 @@
 # Demonstration Integrating Showdown with Full Page Story
-[See a Live Demo of this Example](http://github.openwaterfoundation.org/owf-lib-showdown-js/web-application-showdown/site/)
+[See a Live Demo of this Example](http://github.openwaterfoundation.org/owf-lib-showdown-js/Markdown-to-HTML-Fullpage-Story/site/)
 
 This demonstration uses an existing story website. Integrating the conversion of separate Markdown files to HTML significantly reduces the code found within the HTML file.
 # Table of Contents
