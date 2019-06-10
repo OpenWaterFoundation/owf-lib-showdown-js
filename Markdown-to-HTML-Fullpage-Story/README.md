@@ -78,7 +78,7 @@ function run(inputFile, outputDiv) {
 
 # Markdown to HTML Styling Certain Cases
 
-It may be possible that the need for different colored text is needed. To display colored text, refer to the example below fount in ```002.md```.
+It may be possible that the need for different colored text is needed. To display colored text, refer to the example below fount in ```002-variability.md```.
 
 ```
 
